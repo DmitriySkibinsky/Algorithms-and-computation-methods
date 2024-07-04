@@ -23,7 +23,7 @@
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/example1.png" alt="example1">
 </p>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;For generating random points, we use a uniform distribution over the interval from 0 to 3, where the PDF is: 𝑝(𝑥) = 1/3 for 0 ≤ 𝑥 ≤ 3. Also we find the maximum value of the function along the y axis - 0.(1)
+<p>&nbsp;&nbsp;&nbsp;&nbsp;For generating random points, we use a uniform distribution over the interval from 0 to 3, where the PDF is: 𝑝(𝑥) = 1/3 for 0 ≤ 𝑥 ≤ 3. Also we find the maximum value of the function along the y axis - 0.(1). Therefore, we can set the random point generation edge along the y axis to 0.12
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Next, a specified number of random points 𝑥𝑖 are generated within the interval from 0 to 3. These points are uniformly distributed, meaning each point has an equal probability of being selected. Then, the values of the function 𝑓(𝑥𝑖) are computed for all generated random points. Since we are using a uniform distribution, the PDF values for all points 𝑥𝑖 are equal to 1/3
 
