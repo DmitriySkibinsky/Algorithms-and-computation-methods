@@ -11,7 +11,7 @@ b = 3
 # Probability density function (PDF) for generating random points
 # In this case, we will use a uniform PDF on the interval [a, b]
 def pdf(x):
-    return 1 / (b - a) if a <= x <= b else 0
+    return np.where((a <= x) & (x <= b), 1 / (b - a), 0)
 
 # Number of random points for the Monte Carlo method
 num_samples = 100000
