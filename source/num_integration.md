@@ -13,7 +13,7 @@
 
 ## Monte Carlo Integration Algorithm
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/MonteCarloSimulation.png/640px-MonteCarloSimulation.png" alt="example2">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/monte-carlo.jpg" alt="monte-carlo">
 </p>
 
   
