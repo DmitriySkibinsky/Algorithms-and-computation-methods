@@ -13,8 +13,9 @@
 
 ## Monte Carlo Integration Algorithm
 <p align="center">
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fthatsmaths.com%2F2020%2F05%2F28%2Fthe-monte-carlo-method%2F&psig=AOvVaw1v9XJcP4YjUbyZSun748y1&ust=1720198773624000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCICK4vbtjYcDFQAAAAAdAAAAABAR" alt="example2">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/MonteCarloSimulation.png/640px-MonteCarloSimulation.png" alt="example2">
 </p>
+
   
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The Monte Carlo algorithm is a numerical method that uses random sampling to estimate the values of integrals. In general, this method involves the following steps. First, the function 𝑓(𝑥) to be integrated over a given interval [𝑎,𝑏] is defined. Then, a probability density function (PDF) is chosen to describe how random points are distributed over this interval. For simplicity, a uniform distribution is often used. Next, a large number of random points 𝑥𝑖 are generated within the given interval according to the chosen PDF. These points are used to compute the values of the function 𝑓(𝑥𝑖). The PDF values at these points 𝑝(𝑥𝑖) are also computed. The final estimate of the integral is obtained by averaging the ratio 𝑓(𝑥𝑖)/𝑝(𝑥𝑖) for all generated random points.
 
