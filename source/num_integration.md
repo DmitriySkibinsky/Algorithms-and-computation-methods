@@ -1,4 +1,4 @@
-#Introduction to Numerical Integration
+# Introduction to Numerical Integration
 
 Numerical integration is a fundamental technique in computational mathematics used to approximate the integral of a function when an analytical solution is difficult or impossible to obtain. This article explores several sophisticated methods for numerical integration, focusing on their application to matrix solutions. We will delve into:
 
