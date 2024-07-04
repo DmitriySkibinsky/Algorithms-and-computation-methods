@@ -1,6 +1,6 @@
 # Algorithms and computation methods
 
-![](./sourсe/logo.png)
+![]([./sourсe/logo.png](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/logo.png))
 
 This repository discusses mechanisms for solving mathematical problems using the Python programming language. Here we will consider and show examples of such topics as: 
 
