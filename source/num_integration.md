@@ -102,6 +102,10 @@ Where:
 𝑥0 = 𝑎
 𝑥𝑛 = 𝑏
 𝑥𝑖 = 𝑎 + 𝑖 ⋅ ℎ for 𝑖 = 1, 2, …, 𝑛
+As a result, we get a situation where the multipliers will alternate 1, 4, 2, 4, 2, ..., 4, 1
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/maxresdefault.jpg" alt="maxresdefault">
+</p>
 
 ### Steps to Apply Simpson's Rule
 1. Divide the Interval: Divide the interval [𝑎,𝑏] into 𝑛 subintervals of equal width ℎ. Ensure 𝑛 is even.
