@@ -95,3 +95,18 @@ Simpson's method, also known as Simpson's rule, is a numerical technique for app
 Simpson's rule works by dividing the interval [𝑎,𝑏] into an even number of subintervals, typically denoted as 𝑛. Each subinterval has a width ℎ = (𝑏−𝑎)/𝑛. For each pair of subintervals, Simpson's rule fits a quadratic polynomial (parabola) through three points: the endpoints of the interval and the midpoint. The definite integral over the interval is then approximated by the integral of this polynomial.
 
 The formula for Simpson's rule for an interval [𝑎,𝑏] divided into 𝑛 subintervals (where 𝑛 is even) is:
+
+Where:
+𝑥0 = 𝑎
+𝑥𝑛 = 𝑏
+𝑥𝑖 = 𝑎 + 𝑖 ⋅ ℎ for 𝑖 = 1, 2, …, 𝑛
+
+### Steps to Apply Simpson's Rule
+1. Divide the Interval: Divide the interval [𝑎,𝑏] into 𝑛 subintervals of equal width ℎ. Ensure 𝑛 is even.
+2. Evaluate the Function: Compute the function values at the endpoints and midpoints of the subintervals.
+3. Apply the Formula: Use the Simpson's rule formula to approximate the integral.
+
+Example:
+Consider the function 
+
+over the interval [0,3]. To approximate the integral using Simpson's rule with 𝑛 = 1000:
