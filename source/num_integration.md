@@ -87,3 +87,11 @@ if __name__ == "__main__":
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Computational Cost: Because of the slow convergence rate, achieving high precision requires a large number of samples, which can be computationally expensive. This is particularly relevant when the function evaluations are costly.
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Randomness Quality: The quality of the random number generator can affect the accuracy and reliability of the results. Poor-quality random number generators can introduce biases and reduce the effectiveness of the method.
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Complexity in High Precision: While Monte Carlo methods are efficient in higher dimensions, obtaining very high precision can still be challenging and resource-intensive, as the number of samples required for a given precision increases exponentially.
+
+## Simpson's Method
+Simpson's method, also known as Simpson's rule, is a numerical technique for approximating the definite integral of a function. It is particularly useful when an exact analytical solution to the integral is difficult or impossible to obtain. The method is based on approximating the integrand using quadratic polynomials.
+
+### How Simpson's Method Works
+Simpson's rule works by dividing the interval [𝑎,𝑏] into an even number of subintervals, typically denoted as 𝑛. Each subinterval has a width ℎ = (𝑏−𝑎)/𝑛. For each pair of subintervals, Simpson's rule fits a quadratic polynomial (parabola) through three points: the endpoints of the interval and the midpoint. The definite integral over the interval is then approximated by the integral of this polynomial.
+
+The formula for Simpson's rule for an interval [𝑎,𝑏] divided into 𝑛 subintervals (where 𝑛 is even) is:
