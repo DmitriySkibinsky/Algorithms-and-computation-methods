@@ -98,11 +98,13 @@ The formula for Simpson's rule for an interval [𝑎,𝑏] divided into 𝑛 sub
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/main.png" alt="main">
 </p>
+
 Where:
 𝑥0 = 𝑎
 𝑥𝑛 = 𝑏
 𝑥𝑖 = 𝑎 + 𝑖 ⋅ ℎ for 𝑖 = 1, 2, …, 𝑛
 As a result, we get a situation where the multipliers will alternate 1, 4, 2, 4, 2, ..., 4, 1
+
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/maxresdefault.jpg" alt="maxresdefault">
 </p>
