@@ -89,10 +89,10 @@ if __name__ == "__main__":
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Complexity in High Precision: While Monte Carlo methods are efficient in higher dimensions, obtaining very high precision can still be challenging and resource-intensive, as the number of samples required for a given precision increases exponentially.
 
 ## Simpson's Method
-Simpson's method, also known as Simpson's rule, is a numerical technique for approximating the definite integral of a function. It is particularly useful when an exact analytical solution to the integral is difficult or impossible to obtain. The method is based on approximating the integrand using quadratic polynomials.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Simpson's method, also known as Simpson's rule, is a numerical technique for approximating the definite integral of a function. It is particularly useful when an exact analytical solution to the integral is difficult or impossible to obtain. The method is based on approximating the integrand using quadratic polynomials.
 
 ### How Simpson's Method Works
-Simpson's rule works by dividing the interval [𝑎,𝑏] into an even number of subintervals, typically denoted as 𝑛. Each subinterval has a width ℎ = (𝑏−𝑎)/𝑛. For each pair of subintervals, Simpson's rule fits a quadratic polynomial (parabola) through three points: the endpoints of the interval and the midpoint. The definite integral over the interval is then approximated by the integral of this polynomial.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Simpson's rule works by dividing the interval [𝑎,𝑏] into an even number of subintervals, typically denoted as 𝑛. Each subinterval has a width ℎ = (𝑏−𝑎)/𝑛. For each pair of subintervals, Simpson's rule fits a quadratic polynomial (parabola) through three points: the endpoints of the interval and the midpoint. The definite integral over the interval is then approximated by the integral of this polynomial.
 
 The formula for Simpson's rule for an interval [𝑎,𝑏] divided into 𝑛 subintervals (where 𝑛 is even) is:
 <p align="center">
@@ -115,7 +115,7 @@ As a result, we get a situation where the multipliers will alternate 1, 4, 2, 4,
 3. Apply the Formula: Use the Simpson's rule formula to approximate the integral.
 
 Example:
-Consider the <b>function<b/> 
+Consider the function 
 
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/form.png" alt="form">
@@ -162,3 +162,31 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 
 
 ```
+
+### Advantages of Simpson's Method
+
+<b>High Accuracy<b/>:
+- Polynomial Approximation. By using quadratic polynomials (parabolas) to approximate the integrand, Simpson's rule typically provides a higher accuracy compared to methods that use linear approximations, like the trapezoidal rule.
+- Error Reduction: The error in Simpson's rule decreases faster as the number of subintervals increases, specifically, the error is proportional to 1/𝑛^4 for smooth functions.
+
+<b>Simplicity<b/>:
+- Easy to Implement: The algorithm is straightforward to implement programmatically. The process involves simple arithmetic operations and can be easily coded.
+- Efficiency: It provides a good balance between computational efficiency and accuracy. With a moderate number of subintervals, it often achieves sufficiently accurate results for many practical problems.
+
+<b>Broad Applicability<b/>:
+- Versatility: Simpson's method is applicable to a wide range of integrable functions, including those that are difficult to integrate analytically.
+- Composite Simpson's Rule: By applying the rule over multiple subintervals, it can handle integrals over any finite interval.
+
+### Limitations and Downsides of Simpson's Method
+
+<b>Requirement of an Even Number of Subintervals<b/>:
+- Fixed Interval Count: The method requires the number of subintervals 𝑛 to be even. This restriction can be inconvenient and may require adjustments to the chosen interval division.
+- Additional Complexity: If an odd number of subintervals is desired, modifications or alternative methods must be used, adding complexity to the process.
+
+<b>Dependency on Function Smoothness<b/>:
+- Smooth Functions Preferred: Simpson's rule assumes that the function being integrated is sufficiently smooth. If the function has discontinuities or sharp changes, the approximation may not be accurate.
+- Oscillatory Functions: For highly oscillatory functions, Simpson's rule might not perform well, and other specialized methods may be needed.
+
+<b>Computational Load<b/>:
+- Higher Order Calculations: While more accurate, Simpson's rule involves more function evaluations and arithmetic operations than some simpler methods, which can increase computational time, especially for complex or computationally expensive functions.
+
