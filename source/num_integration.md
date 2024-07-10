@@ -115,7 +115,7 @@ As a result, we get a situation where the multipliers will alternate 1, 4, 2, 4,
 3. Apply the Formula: Use the Simpson's rule formula to approximate the integral.
 
 Example:
-Consider the function 
+Consider the <b>function<b/> 
 
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/form.png" alt="form">
