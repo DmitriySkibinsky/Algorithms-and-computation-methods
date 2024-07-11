@@ -6,8 +6,8 @@ This repository discusses mechanisms for solving mathematical problems using the
 
 1. [Numerical Integration](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/num_integration.md)
 2. [Solution of linear equations](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/liner_matrix.md)
-3. [Solution of nonlinear equations](./num_integration.md)
-4. [Approximation and interpolation](./num_integration.md)
-5. [Approximation by trigonometric functions. Fourier series](./num_integration.md)
-6. [Multivariate optimization of continuous functions](./num_integration.md)
-7. [Multivariate Discrete Optimization](./num_integration.md)
+3. [Solution of nonlinear equations](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/nonliner_matrix.md)
+4. [Approximation and interpolation](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/interpolation.md)
+5. [Approximation by trigonometric functions. Fourier series](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/fourier.md)
+6. [Multivariate optimization of continuous functions](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/optimization.md)
+7. [Multivariate Discrete Optimization](https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/discrete.md)
