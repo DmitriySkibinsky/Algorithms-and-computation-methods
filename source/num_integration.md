@@ -195,6 +195,7 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 The adaptive Simpson's method refines the Simpson's rule by recursively subdividing the integration interval until a specified error tolerance is met. This allows the method to allocate more computational effort to regions where the integrand is more complex, leading to more accurate results without a significant increase in computational cost.
 
 ### Simpson's Rule
+
 Simpson's rule approximates the integral of a function 𝑓(𝑥) over an interval [𝑎,𝑏] by fitting a quadratic polynomial through the points (𝑎,𝑓(𝑎)), ((𝑎+𝑏)/2, 𝑓((𝑎+𝑏)/2) and (𝑏,𝑓(𝑏)). The approximation is given by:
 
 <p align="center">
