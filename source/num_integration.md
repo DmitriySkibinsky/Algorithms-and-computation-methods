@@ -11,7 +11,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;In this article, we will discuss the theoretical foundations of these methods, their implementation details, and their practical applications in solving complex matrix problems. Through detailed examples and comparisons, we aim to provide a comprehensive understanding of these numerical integration techniques and their effectiveness in various computational scenarios.
 
 
-# Monte Carlo Integration Algorithm
+## Monte Carlo Integration Algorithm
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/monte-carlo.jpg" alt="monte-carlo">
 </p>
@@ -190,3 +190,70 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 <b>Computational Load<b/>:
 - Higher Order Calculations: While more accurate, Simpson's rule involves more function evaluations and arithmetic operations than some simpler methods, which can increase computational time, especially for complex or computationally expensive functions.
 
+## Adaptive Simpson's Method
+
+The adaptive Simpson's method refines the Simpson's rule by recursively subdividing the integration interval until a specified error tolerance is met. This allows the method to allocate more computational effort to regions where the integrand is more complex, leading to more accurate results without a significant increase in computational cost.
+
+### Simpson's Rule
+Simpson's rule approximates the integral of a function 𝑓(𝑥) over an interval [𝑎,𝑏] by fitting a quadratic polynomial through the points (𝑎,𝑓(𝑎)), ((𝑎+𝑏)/2, 𝑓((𝑎+𝑏)/2) and (𝑏,𝑓(𝑏)). The approximation is given by:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/sim.png" alt="sim">
+</p>
+
+Adaptive Approach
+In the adaptive Simpson's method, the interval [𝑎,𝑏] is recursively subdivided into smaller intervals until the integral estimates converge within a specified tolerance 𝜖. This is done by:
+
+Calculating the integral over 
+[
+𝑎
+,
+𝑏
+]
+[a,b] using Simpson's rule.
+Dividing 
+[
+𝑎
+,
+𝑏
+]
+[a,b] into two subintervals 
+[
+𝑎
+,
+𝑎
++
+𝑏
+2
+]
+[a, 
+2
+a+b
+​
+ ] and 
+[
+𝑎
++
+𝑏
+2
+,
+𝑏
+]
+[ 
+2
+a+b
+​
+ ,b], and calculating the integral over each subinterval.
+Comparing the sum of the integrals over the subintervals to the integral over the entire interval. If the difference is within 
+𝜖
+ϵ, the sum of the subinterval integrals is accepted. Otherwise, the process is recursively applied to each subinterval.
+Advantages
+Accuracy: The adaptive method increases the accuracy of the integral approximation by focusing computational effort on regions with higher error, effectively handling functions with varying smoothness.
+Efficiency: By adaptively subdividing the interval, the method avoids unnecessary calculations in regions where the function is smooth, saving computational resources.
+Flexibility: It can handle a wide range of integrands, including those with singularities or rapid oscillations, better than fixed-step methods.
+Disadvantages
+Complexity: The method is more complex to implement compared to fixed-step methods like the basic Simpson's rule or the trapezoidal rule.
+Computational Overhead: The recursive nature of the method introduces overhead from multiple function evaluations and recursive calls, which can be significant for highly irregular functions.
+Adaptive Criterion Sensitivity: The choice of the tolerance 
+𝜖
+ϵ can significantly impact the performance and accuracy of the method. Too large a tolerance might result in poor accuracy, while too small a tolerance might lead to excessive computations.
