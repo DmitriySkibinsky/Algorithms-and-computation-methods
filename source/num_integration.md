@@ -11,7 +11,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;In this article, we will discuss the theoretical foundations of these methods, their implementation details, and their practical applications in solving complex matrix problems. Through detailed examples and comparisons, we aim to provide a comprehensive understanding of these numerical integration techniques and their effectiveness in various computational scenarios.
 
 
-## Monte Carlo Integration Algorithm
+# Monte Carlo Integration Algorithm
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/monte-carlo.jpg" alt="monte-carlo">
 </p>
