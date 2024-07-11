@@ -187,7 +187,7 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 - Smooth Functions Preferred: Simpson's rule assumes that the function being integrated is sufficiently smooth. If the function has discontinuities or sharp changes, the approximation may not be accurate.
 - Oscillatory Functions: For highly oscillatory functions, Simpson's rule might not perform well, and other specialized methods may be needed.
 
-<b>Computational Load<b/>:
+<b>Computational Load<b/><b/>:
 - Higher Order Calculations: While more accurate, Simpson's rule involves more function evaluations and arithmetic operations than some simpler methods, which can increase computational time, especially for complex or computationally expensive functions.
 
 ## Adaptive Simpson's Method
