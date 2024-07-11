@@ -200,14 +200,14 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 
 ### Simpson's Rule
 
-Simpson's rule approximates the integral of a function 𝑓(𝑥) over an interval [𝑎,𝑏] by fitting a quadratic polynomial through the points (𝑎,𝑓(𝑎)), ((𝑎+𝑏)/2, 𝑓((𝑎+𝑏)/2) and (𝑏,𝑓(𝑏)). The approximation is given by:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Simpson's rule approximates the integral of a function 𝑓(𝑥) over an interval [𝑎,𝑏] by fitting a quadratic polynomial through the points (𝑎,𝑓(𝑎)), ((𝑎+𝑏)/2, 𝑓((𝑎+𝑏)/2) and (𝑏,𝑓(𝑏)). The approximation is given by:
 
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/1.%20Numerical%20Integration/img/sim.png" alt="sim">
 </p>
 
 Adaptive Approach
-In the adaptive Simpson's method, the interval [𝑎,𝑏] is recursively subdivided into smaller intervals until the integral estimates converge within a specified tolerance 𝜖. This is done by:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;In the adaptive Simpson's method, the interval [𝑎,𝑏] is recursively subdivided into smaller intervals until the integral estimates converge within a specified tolerance 𝜖. This is done by:
 
 1. Calculating the integral over [𝑎,𝑏] using Simpson's rule.
 2. Dividing [𝑎,𝑏] into two subintervals [𝑎, (𝑎+𝑏)/2] and [(𝑎+𝑏)/2, 𝑏], and calculating the integral over each subinterval.
