@@ -14,16 +14,16 @@ where 𝑎1, 𝑏1, 𝑐1, 𝑎2, 𝑏2, and 𝑐2 are constants. The goal is to
 
 There are several methods to solve systems of linear equations:
 
-Graphical Method: Plotting each equation on a graph and finding the point(s) where they intersect.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Graphical Method: Plotting each equation on a graph and finding the point(s) where they intersect.
 Substitution Method: Solving one equation for one variable and substituting that expression into the other equation.
 Elimination Method: Adding or subtracting equations to eliminate one variable, making it easier to solve for the remaining variable.
 Matrix Methods: Using matrices and operations such as Gaussian elimination to systematically solve the system.
 
 ### Importance and Applications
 
-The ability to solve linear equations is crucial because it allows for the modeling and solving of many real-world problems. Applications range from calculating electrical circuits and optimizing production processes to financial modeling and predicting economic outcomes.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The ability to solve linear equations is crucial because it allows for the modeling and solving of many real-world problems. Applications range from calculating electrical circuits and optimizing production processes to financial modeling and predicting economic outcomes.
 
-Understanding and mastering these techniques provide a powerful toolset for solving a wide array of practical and theoretical problems. As systems of linear equations become larger and more complex, computational methods and software tools like MATLAB, Python, and R become essential for efficient and accurate solutions.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Understanding and mastering these techniques provide a powerful toolset for solving a wide array of practical and theoretical problems. As systems of linear equations become larger and more complex, computational methods and software tools like MATLAB, Python, and R become essential for efficient and accurate solutions.
 
 ## Gaussian Elimination Method
 
@@ -36,7 +36,7 @@ The forward elimination stage aims to transform the original system's augmented 
 - <b>Normalization</b>: Divide the current row by the leading coefficient (the first non-zero number in the row) to make the leading coefficient equal to 1.
 - <b>Elimination</b>: Subtract multiples of the current row from the rows below it to create zeros in the column below the leading coefficient.
 
-By the end of the forward elimination stage, the augmented matrix is transformed into an upper triangular form, where all the elements below the main diagonal are zero.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;By the end of the forward elimination stage, the augmented matrix is transformed into an upper triangular form, where all the elements below the main diagonal are zero.
 
 <b>Backward Substitution</b>
 
