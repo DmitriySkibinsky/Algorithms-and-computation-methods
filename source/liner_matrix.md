@@ -46,15 +46,91 @@ Matrix Methods: Using matrices and operations such as Gaussian elimination to sy
 - <b>Substitution</b>: Substitute the solved variable into the above rows, effectively reducing the system's size and making it easier to solve the remaining variables.
 - <b>Iterate upwards</b>: Continue this process, moving up one row at a time, solving for each variable.
 
-<b>Example</b>
+### Example
 Consider the following system of equations:
 
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/1.png" alt="1"
 </p>
 
-Form the augmented matrix:
+### 1. Form the augmented matrix:
 
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/2.png" alt="2"
 </p>
+
+### 2. Forward Elimination:
+
+- Pivot the first column if necessary and normalize the first row.
+- Eliminate the x-coefficient from the second and third rows.
+- Repeat for the second column, ensuring to pivot and normalize.
+
+### 3. Backward Substitution:
+
+- Solve the last row for z.
+- Substitute z into the second row to solve for y.
+- Substitute y and z into the first row to solve for x.
+
+### Usage Example
+Suppose we have the following system of linear equations:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/3.png" alt="3"
+</p>
+
+```python
+def mprint(matrix, b):
+    for i in range(len(matrix)):
+        print(matrix[i], b[i])
+
+def gaussian_elimination(matrix, b):
+    n = len(matrix)
+    for i in range(n):
+        # Find the maximum element in the column
+        max_element_index = i
+        for k in range(i + 1, n):
+            if abs(matrix[k][i]) > abs(matrix[max_element_index][i]):
+                max_element_index = k
+        # Swap rows
+        matrix[i], matrix[max_element_index] = matrix[max_element_index], matrix[i]
+        b[i], b[max_element_index] = b[max_element_index], b[i]
+
+        # Divide the first element of the row by its leading coefficient
+        divisor = matrix[i][i]
+        for j in range(i, n):
+            matrix[i][j] /= divisor
+        b[i] /= divisor
+
+        # Subtract the first row from the others
+        for j in range(i + 1, n):
+            factor = matrix[j][i]
+            for k in range(i, n):
+                matrix[j][k] -= factor * matrix[i][k]
+            b[j] -= factor * b[i]
+
+    # Back substitution
+    for i in range(n - 1, -1, -1):
+        for j in range(i - 1, -1, -1):
+            factor = matrix[j][i]
+            matrix[j][i] -= factor * matrix[i][i]
+            b[j] -= factor * b[i]
+
+    return matrix, b
+
+matrix = [[3, 0, -1],
+          [2, -5, 1],
+          [2, -2, 6]]
+b = [-4, 9, 8]
+
+matrix, b = gaussian_elimination(matrix, b)
+mprint(matrix, b)
+```
+
+### Importance and Applications
+Gaussian elimination is a fundamental algorithm in numerical linear algebra and is widely used due to its efficiency and simplicity. Its applications include:
+
+- <b>Engineering</b>: Solving systems of equations in circuit analysis, structural analysis, and fluid dynamics.
+- <b>Computer Science</b>: Algorithms for computer graphics and machine learning models.
+- <b>Economics</b>: Solving models for economic forecasting and optimization problems.
+- <b>Physics</b>: Solving differential equations and quantum mechanics problems.
+Understanding Gaussian elimination provides a solid foundation for more advanced numerical methods and is essential for anyone working with systems of linear equations in various scientific and engineering disciplines.
