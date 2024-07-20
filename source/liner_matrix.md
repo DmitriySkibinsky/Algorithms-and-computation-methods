@@ -45,3 +45,16 @@ Matrix Methods: Using matrices and operations such as Gaussian elimination to sy
 - <b>Starting with the last row</b>: Solve for the variable corresponding to the last row, as it will have only one variable.
 - <b>Substitution</b>: Substitute the solved variable into the above rows, effectively reducing the system's size and making it easier to solve the remaining variables.
 - <b>Iterate upwards</b>: Continue this process, moving up one row at a time, solving for each variable.
+
+<b>Example</b>
+Consider the following system of equations:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/1.png" alt="1"
+</p>
+
+Form the augmented matrix:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/2.png" alt="2"
+</p>
