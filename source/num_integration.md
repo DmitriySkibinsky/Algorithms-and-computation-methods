@@ -179,7 +179,7 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 
 ### Limitations and Downsides of Simpson's Method
 
-<b>Requirement of an Even Number of Subintervals<b/>:
+<b>Requirement of an Even Number of Subintervals</b>:
 - Fixed Interval Count: The method requires the number of subintervals 𝑛 to be even. This restriction can be inconvenient and may require adjustments to the chosen interval division.
 - Additional Complexity: If an odd number of subintervals is desired, modifications or alternative methods must be used, adding complexity to the process.
 
