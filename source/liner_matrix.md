@@ -12,7 +12,7 @@ where 𝑎1, 𝑏1, 𝑐1, 𝑎2, 𝑏2, and 𝑐2 are constants. The goal is to
 
 ### Methods of Solving Linear Equations
 
-There are several methods to solve systems of linear equations:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;There are several methods to solve systems of linear equations:
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Graphical Method: Plotting each equation on a graph and finding the point(s) where they intersect.
 Substitution Method: Solving one equation for one variable and substituting that expression into the other equation.
