@@ -169,11 +169,11 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 - Polynomial Approximation. By using quadratic polynomials (parabolas) to approximate the integrand, Simpson's rule typically provides a higher accuracy compared to methods that use linear approximations, like the trapezoidal rule.
 - Error Reduction: The error in Simpson's rule decreases faster as the number of subintervals increases, specifically, the error is proportional to 1/𝑛^4 for smooth functions.
 
-<b>Simplicity<b/>:
+<b>Simplicity</b>:
 - Easy to Implement: The algorithm is straightforward to implement programmatically. The process involves simple arithmetic operations and can be easily coded.
 - Efficiency: It provides a good balance between computational efficiency and accuracy. With a moderate number of subintervals, it often achieves sufficiently accurate results for many practical problems.
 
-<b>Broad Applicability<b/>:
+<b>Broad Applicability</b>:
 - Versatility: Simpson's method is applicable to a wide range of integrable functions, including those that are difficult to integrate analytically.
 - Composite Simpson's Rule: By applying the rule over multiple subintervals, it can handle integrals over any finite interval.
 
@@ -183,11 +183,11 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 - Fixed Interval Count: The method requires the number of subintervals 𝑛 to be even. This restriction can be inconvenient and may require adjustments to the chosen interval division.
 - Additional Complexity: If an odd number of subintervals is desired, modifications or alternative methods must be used, adding complexity to the process.
 
-<b>Dependency on Function Smoothness<b/>:
+<b>Dependency on Function Smoothness</b>:
 - Smooth Functions Preferred: Simpson's rule assumes that the function being integrated is sufficiently smooth. If the function has discontinuities or sharp changes, the approximation may not be accurate.
 - Oscillatory Functions: For highly oscillatory functions, Simpson's rule might not perform well, and other specialized methods may be needed.
 
-<b>Computational Load<b/>:
+<b>Computational Load</b>:
 - Higher Order Calculations: While more accurate, Simpson's rule involves more function evaluations and arithmetic operations than some simpler methods, which can increase computational time, especially for complex or computationally expensive functions.
 
 ## Adaptive Simpson's Method
