@@ -65,6 +65,10 @@ Consider the following system of equations:
 - Eliminate the x-coefficient from the second and third rows.
 - Repeat for the second column, ensuring to pivot and normalize.
 
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/gstep.png" alt="gstep"
+</p>
+
 ### 3. Backward Substitution:
 
 - Solve the last row for z.
