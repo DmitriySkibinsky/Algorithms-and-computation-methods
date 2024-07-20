@@ -31,7 +31,7 @@ Matrix Methods: Using matrices and operations such as Gaussian elimination to sy
 
 <b>Forward Elimination</b>
 
-The forward elimination stage aims to transform the original system's augmented matrix into an upper triangular form. This is achieved through a series of row operations:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The forward elimination stage aims to transform the original system's augmented matrix into an upper triangular form. This is achieved through a series of row operations:
 - <b>Pivoting</b>: For each column, identify the row with the largest absolute value in the current column (from the current row to the bottom) and swap it with the current row. This helps to avoid numerical instability.
 - <b>Normalization</b>: Divide the current row by the leading coefficient (the first non-zero number in the row) to make the leading coefficient equal to 1.
 - <b>Elimination</b>: Subtract multiples of the current row from the rows below it to create zeros in the column below the leading coefficient.
@@ -40,7 +40,7 @@ The forward elimination stage aims to transform the original system's augmented 
 
 <b>Backward Substitution</b>
 
-Once the matrix is in upper triangular form, the backward substitution stage begins. This stage involves solving for the variables starting from the last row and working upwards:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Once the matrix is in upper triangular form, the backward substitution stage begins. This stage involves solving for the variables starting from the last row and working upwards:
 
 - <b>Starting with the last row</b>: Solve for the variable corresponding to the last row, as it will have only one variable.
 - <b>Substitution</b>: Substitute the solved variable into the above rows, effectively reducing the system's size and making it easier to solve the remaining variables.
