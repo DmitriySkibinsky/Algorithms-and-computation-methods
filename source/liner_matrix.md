@@ -154,3 +154,33 @@ Understanding Gaussian elimination provides a solid foundation for more advanced
 - <b>Storage Requirements</b>: Gaussian elimination requires the storage of the entire matrix, which can be impractical for very large, sparse matrices. Specialized techniques and data structures are needed to handle such cases efficiently.
 - <b>Sensitive to Ill-Conditioned Systems</b>: For systems where the matrix is ill-conditioned (where small changes in the input can lead to large changes in the output), Gaussian elimination can produce inaccurate results. This sensitivity necessitates the use of preconditioning techniques or alternative methods.
 - <b>Noisy Data</b>: In practical applications where data may be noisy or imprecise, the method may amplify errors, leading to unreliable solutions. Techniques such as regularization are sometimes required to stabilize the solution.
+
+## Gauss-Seidel method
+
+The Gauss-Seidel method (or Seidel method) is an iterative algorithm for solving a system of linear algebraic equations (SLAE) of the form 𝐴𝑥 = 𝑏, where 𝐴 is a square matrix of coefficients, 𝑥 is the vector of unknowns, and 𝑏 is the vector of constants. This method is an improvement over the simple iteration method and is one of the methods used to solve SLAEs, alongside the Jacobi and relaxation methods.
+
+### Key Principles of the Method
+1. Iterative Process: The Gauss-Seidel method is based on an iterative process where each new approximation x&sup(k+1); 𝑘
++
+1
+)
+x 
+(k+1)
+  is obtained based on the previous approximation 
+𝑥
+(
+𝑘
+)
+x 
+(k)
+ . In each iteration, the values of the components in vector 
+𝑥
+x are updated.
+
+Sequential Update: Unlike the Jacobi method, where all new values are computed simultaneously, the Gauss-Seidel method uses updated values as soon as they become available. This accelerates the convergence of the method.
+
+Convergence: The Gauss-Seidel method converges faster than the Jacobi method if the matrix 
+𝐴
+A is diagonally dominant or positive definite. In some cases, the method may not converge, which depends on the properties of matrix 
+𝐴
+A.
