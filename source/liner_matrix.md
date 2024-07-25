@@ -161,11 +161,11 @@ The Gauss-Seidel method (or Seidel method) is an iterative algorithm for solving
 
 ### Key Principles of the Method
 
-1. Iterative Process: The Gauss-Seidel method is based on an iterative process where each new approximation $x^{k+1}$ is obtained based on the previous approximation $x^{k}$. In each iteration, the values of the components in vector 𝑥 are updated.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Iterative Process: The Gauss-Seidel method is based on an iterative process where each new approximation $x^{k+1}$ is obtained based on the previous approximation $x^{k}$. In each iteration, the values of the components in vector 𝑥 are updated.
 
-2. Sequential Update: Unlike the Jacobi method, where all new values are computed simultaneously, the Gauss-Seidel method uses updated values as soon as they become available. This accelerates the convergence of the method.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2. Sequential Update: Unlike the Jacobi method, where all new values are computed simultaneously, the Gauss-Seidel method uses updated values as soon as they become available. This accelerates the convergence of the method.
 
-3. Convergence: The Gauss-Seidel method converges faster than the Jacobi method if the matrix 𝐴 is diagonally dominant or positive definite. In some cases, the method may not converge, which depends on the properties of matrix 𝐴.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3. Convergence: The Gauss-Seidel method converges faster than the Jacobi method if the matrix 𝐴 is diagonally dominant or positive definite. In some cases, the method may not converge, which depends on the properties of matrix 𝐴.
 
 ### Iterative Process
 
@@ -175,18 +175,90 @@ The iterative formula of the Gauss-Seidel method for the 𝑖-th row is as follo
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/Zendel_main.png" alt="Zendel_main"
 </p>
 
-### Advantages and Disadvantages
-#### Advantages:
+### Example of Application
 
-Simple to implement.
-Effective for large and sparse systems.
-Converges faster than the Jacobi method in the case of diagonally dominant matrices.
-Disadvantages:
+Consider an example of solving a system of equations using the Gauss-Seidel method:
 
-Convergence is not guaranteed for all matrices 
-𝐴
-A.
-Preliminary checking of convergence conditions may be required.
-Not as well-suited for parallel implementation as the Jacobi method.
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/ex1.png" alt="ex1"
+</p>
+
+1. Initial approximation: $x1^{(0)}$
+
+2. Iterations:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/ex2.png" alt="ex2"
+</p>
+
+3. Repeat iterations until the desired accuracy is achieved.
+
+Thus, the Gauss-Seidel method is a powerful tool for solving SLAEs, especially useful for sparse and large systems, provided the convergence criteria are met.
+
+```python
+import copy
+# import numpy as np
+
+def zero_matrix(x):
+    return [0] * x
+
+
+def max_value(matrix):
+    k = matrix[0][0]
+    n = len(matrix)
+    for i in range(n):
+        for j in range(n):
+            if matrix[i][j] > k:
+                k = matrix[i][j]
+    return k
+
+
+def zeidel(a, b, eps=1e-9):
+    m = len(b)
+    x = zero_matrix(m)
+    d = zero_matrix(m)
+    iteration = 0
+    the_end = False
+    while not the_end:
+        # y = np.copy(x)
+        y = copy.deepcopy(x)
+        for i in range(m):
+            s1 = sum(A[i][j] * y[j] for j in range(i))
+            s2 = sum(A[i][j] * x[j] for j in range(i + 1, m))
+            y[i] = (b[i] - s1 - s2) / A[i][i]
+            # d[i] = np.fabs (y[i] - x[i])
+            d[i] = abs(y[i] - x[i])
+        p = max(d)
+        iteration += 1
+        x = y
+        the_end = p <= eps
+        if iteration == 1000: the_end = True
+    return x, iteration, p
+
+
+A = [[2, -1, 0], [0, 5, 2], [15, -1, 3]]
+B = [3, 7, 4]
+
+x, it, p = zeidel(A, B)
+
+print('Итерация:', it)
+print('X =', x)
+print('Погрешность =', p)
+```
+### Application
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Gauss-Seidel method is particularly advantageous for solving systems of linear equations in several scenarios. It is especially useful for large, sparse systems because it efficiently updates only non-zero elements, conserving memory and computational resources. The method converges quickly for diagonally dominant or symmetric positive definite matrices, ensuring reliable solutions. It is also preferable when direct methods are computationally expensive, making it suitable for very large systems. If an approximate solution is acceptable or if a good initial guess is close to the true solution, the Gauss-Seidel method can provide quick and efficient results. Despite being less suited for parallel processing, it remains useful when parallel computing resources are limited.
+  
+### Advantages of Gauss-Seidel method:
+
+- Simple to implement.
+- Effective for large and sparse systems.
+- Converges faster than the Jacobi method in the case of diagonally dominant matrices.
+
+### Disadvantages of Gauss-Seidel method:
+
+- Convergence is not guaranteed for all matrices 𝐴.
+- Preliminary checking of convergence conditions may be required.
+- Not as well-suited for parallel implementation as the Jacobi method.
 
 
