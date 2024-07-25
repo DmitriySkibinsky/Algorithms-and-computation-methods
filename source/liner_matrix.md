@@ -241,9 +241,9 @@ B = [3, 7, 4]
 
 x, it, p = zeidel(A, B)
 
-print('Итерация:', it)
+print('Iteration:', it)
 print('X =', x)
-print('Погрешность =', p)
+print('Deviation =', p)
 ```
 ### Application
 
