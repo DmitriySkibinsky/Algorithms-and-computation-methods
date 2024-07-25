@@ -160,7 +160,7 @@ Understanding Gaussian elimination provides a solid foundation for more advanced
 The Gauss-Seidel method (or Seidel method) is an iterative algorithm for solving a system of linear algebraic equations (SLAE) of the form 𝐴𝑥 = 𝑏, where 𝐴 is a square matrix of coefficients, 𝑥 is the vector of unknowns, and 𝑏 is the vector of constants. This method is an improvement over the simple iteration method and is one of the methods used to solve SLAEs, alongside the Jacobi and relaxation methods.
 
 ### Key Principles of the Method
-1. Iterative Process: The Gauss-Seidel method is based on an iterative process where each new approximation x&sup(k+1); 𝑘
+1. Iterative Process: The Gauss-Seidel method is based on an iterative process where each new approximation $x^{k+1}$ ; 𝑘
 +
 1
 )
