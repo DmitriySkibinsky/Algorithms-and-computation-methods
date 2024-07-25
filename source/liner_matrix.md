@@ -166,3 +166,13 @@ The Gauss-Seidel method (or Seidel method) is an iterative algorithm for solving
 2. Sequential Update: Unlike the Jacobi method, where all new values are computed simultaneously, the Gauss-Seidel method uses updated values as soon as they become available. This accelerates the convergence of the method.
 
 3. Convergence: The Gauss-Seidel method converges faster than the Jacobi method if the matrix 𝐴 is diagonally dominant or positive definite. In some cases, the method may not converge, which depends on the properties of matrix 𝐴.
+
+### Iterative Process
+
+The iterative formula of the Gauss-Seidel method for the 𝑖-th row is as follows:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/Zendel_main.png" alt="Zendel_main"
+</p>
+
+
