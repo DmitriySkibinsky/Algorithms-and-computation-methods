@@ -167,7 +167,7 @@ print("Approximate value of the integral using Simpson's method:", integral_valu
 
 <b>High Accuracy</b>:
 - Polynomial Approximation. By using quadratic polynomials (parabolas) to approximate the integrand, Simpson's rule typically provides a higher accuracy compared to methods that use linear approximations, like the trapezoidal rule.
-- Error Reduction: The error in Simpson's rule decreases faster as the number of subintervals increases, specifically, the error is proportional to 1/𝑛^4 for smooth functions.
+- Error Reduction: The error in Simpson's rule decreases faster as the number of subintervals increases, specifically, the error is proportional to 1/$n^{4}$ for smooth functions.
 
 <b>Simplicity</b>:
 - Easy to Implement: The algorithm is straightforward to implement programmatically. The process involves simple arithmetic operations and can be easily coded.
