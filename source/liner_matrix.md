@@ -150,7 +150,7 @@ Understanding Gaussian elimination provides a solid foundation for more advanced
 ### Downsides of Gaussian Elimination
 
 - <b>Numerical Stability</b>: Without careful implementation, Gaussian elimination can suffer from numerical instability, especially when dealing with floating-point arithmetic. Pivoting strategies (like partial or complete pivoting) are required to mitigate this issue, which adds complexity.
-- <b>Computational Cost</b>: The method has a time complexity of 𝑂(𝑛^3) for an 𝑛 × 𝑛 matrix, which can become computationally expensive for very large systems. This makes it less suitable for extremely large-scale problems compared to iterative methods.
+- <b>Computational Cost</b>: The method has a time complexity of 𝑂($n^{3}$) for an 𝑛 × 𝑛 matrix, which can become computationally expensive for very large systems. This makes it less suitable for extremely large-scale problems compared to iterative methods.
 - <b>Storage Requirements</b>: Gaussian elimination requires the storage of the entire matrix, which can be impractical for very large, sparse matrices. Specialized techniques and data structures are needed to handle such cases efficiently.
 - <b>Sensitive to Ill-Conditioned Systems</b>: For systems where the matrix is ill-conditioned (where small changes in the input can lead to large changes in the output), Gaussian elimination can produce inaccurate results. This sensitivity necessitates the use of preconditioning techniques or alternative methods.
 - <b>Noisy Data</b>: In practical applications where data may be noisy or imprecise, the method may amplify errors, leading to unreliable solutions. Techniques such as regularization are sometimes required to stabilize the solution.
