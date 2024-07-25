@@ -157,15 +157,15 @@ Understanding Gaussian elimination provides a solid foundation for more advanced
 
 ## Gauss-Seidel method
 
-The Gauss-Seidel method (or Seidel method) is an iterative algorithm for solving a system of linear algebraic equations (SLAE) of the form 𝐴𝑥 = 𝑏, where 𝐴 is a square matrix of coefficients, 𝑥 is the vector of unknowns, and 𝑏 is the vector of constants. This method is an improvement over the simple iteration method and is one of the methods used to solve SLAEs, alongside the Jacobi and relaxation methods.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Gauss-Seidel method (or Seidel method) is an iterative algorithm for solving a system of linear algebraic equations (SLAE) of the form 𝐴𝑥 = 𝑏, where 𝐴 is a square matrix of coefficients, 𝑥 is the vector of unknowns, and 𝑏 is the vector of constants. This method is an improvement over the simple iteration method and is one of the methods used to solve SLAEs, alongside the Jacobi and relaxation methods.
 
 ### Key Principles of the Method
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Iterative Process: The Gauss-Seidel method is based on an iterative process where each new approximation $x^{k+1}$ is obtained based on the previous approximation $x^{k}$. In each iteration, the values of the components in vector 𝑥 are updated.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>1. Iterative Process</b>: The Gauss-Seidel method is based on an iterative process where each new approximation $x^{k+1}$ is obtained based on the previous approximation $x^{k}$. In each iteration, the values of the components in vector 𝑥 are updated.
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;2. Sequential Update: Unlike the Jacobi method, where all new values are computed simultaneously, the Gauss-Seidel method uses updated values as soon as they become available. This accelerates the convergence of the method.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>2. Sequential Update</b>: Unlike the Jacobi method, where all new values are computed simultaneously, the Gauss-Seidel method uses updated values as soon as they become available. This accelerates the convergence of the method.
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;3. Convergence: The Gauss-Seidel method converges faster than the Jacobi method if the matrix 𝐴 is diagonally dominant or positive definite. In some cases, the method may not converge, which depends on the properties of matrix 𝐴.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>3. Convergence</b>: The Gauss-Seidel method converges faster than the Jacobi method if the matrix 𝐴 is diagonally dominant or positive definite. In some cases, the method may not converge, which depends on the properties of matrix 𝐴.
 
 ### Iterative Process
 
