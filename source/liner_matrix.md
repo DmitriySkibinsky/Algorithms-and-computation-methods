@@ -175,4 +175,18 @@ The iterative formula of the Gauss-Seidel method for the 𝑖-th row is as follo
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/Zendel_main.png" alt="Zendel_main"
 </p>
 
+### Advantages and Disadvantages
+#### Advantages:
+
+Simple to implement.
+Effective for large and sparse systems.
+Converges faster than the Jacobi method in the case of diagonally dominant matrices.
+Disadvantages:
+
+Convergence is not guaranteed for all matrices 
+𝐴
+A.
+Preliminary checking of convergence conditions may be required.
+Not as well-suited for parallel implementation as the Jacobi method.
+
 
