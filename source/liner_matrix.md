@@ -371,7 +371,7 @@ for row in b_tikh:
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The Tikhonov regularization method, also known as Ridge regression in the context of machine learning, is a widely used technique for solving ill-posed problems and stabilizing inverse problems. Here are the key advantages and disadvantages of this method:
 
 #### Advantages
-- <b>Stabilization of Solutions</b>: 1. Overcoming Sensitivity: Tikhonov regularization helps address issues with poorly conditioned matrices, where small changes in input data can lead to large variations in the solution. This improves the stability of the solution. 2. Robustness to Noise: By introducing a regularization term, the method becomes more resilient to noise in the data, enhancing the overall reliability of the solution.
+- <b>Stabilization of Solutions</b>: 1) Overcoming Sensitivity. Tikhonov regularization helps address issues with poorly conditioned matrices, where small changes in input data can lead to large variations in the solution. This improves the stability of the solution. 2) Robustness to Noise. By introducing a regularization term, the method becomes more resilient to noise in the data, enhancing the overall reliability of the solution.
 
 - <b>Control Overfitting</b>: Prevents Overfitting. In machine learning and statistical applications, regularization helps prevent overfitting to training data, improving the model's generalization ability on new, unseen data.
 
