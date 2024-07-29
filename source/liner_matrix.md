@@ -263,17 +263,17 @@ print('Deviation =', p)
 
 ## Tikhonov regularization method
 
-The Tikhonov regularization method, also known as Ridge regression in the context of machine learning, is a powerful technique employed to address ill-posed problems and stabilize inverse problems. These issues often arise when solving systems of linear equations that involve poorly conditioned or singular matrices. In such cases, small perturbations in the input data can lead to significant deviations in the output, making the problem highly sensitive to noise and other inaccuracies. By incorporating an additional regularization term into the solution process, the Tikhonov method mitigates these instabilities, ensuring a more robust and reliable solution. This technique is widely utilized in various fields, including statistics, engineering, and computer science, to improve the performance and accuracy of predictive models and to handle data with high levels of multicollinearity.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Tikhonov regularization method, also known as Ridge regression in the context of machine learning, is a powerful technique employed to address ill-posed problems and stabilize inverse problems. These issues often arise when solving systems of linear equations that involve poorly conditioned or singular matrices. In such cases, small perturbations in the input data can lead to significant deviations in the output, making the problem highly sensitive to noise and other inaccuracies. By incorporating an additional regularization term into the solution process, the Tikhonov method mitigates these instabilities, ensuring a more robust and reliable solution. This technique is widely utilized in various fields, including statistics, engineering, and computer science, to improve the performance and accuracy of predictive models and to handle data with high levels of multicollinearity.
 ### Key Concepts
 
 #### Ill-posed Problems
-Ill-posed problems are characterized by the fact that small changes in the input data can lead to large changes in the solution. Examples include problems with poorly conditioned matrices or issues with noise in the data.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Ill-posed problems are characterized by the fact that small changes in the input data can lead to large changes in the solution. Examples include problems with poorly conditioned matrices or issues with noise in the data.
 
 #### Regularization
-Regularization introduces additional information or constraints to stabilize the solution. In the case of the Tikhonov method, an additional term is added to the solution to control the magnitude of the solution.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Regularization introduces additional information or constraints to stabilize the solution. In the case of the Tikhonov method, an additional term is added to the solution to control the magnitude of the solution.
 
 #### Method Formulation
-Consider the problem of solving a system of linear equations:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Consider the problem of solving a system of linear equations:
 <p align="center">
    𝐴𝑥 = 𝑏
 </p>
@@ -283,7 +283,7 @@ Where:
 - 𝑥 is the vector of unknowns (of size 𝑛)
 - 𝑏 is the observation vector (of size 𝑚)
 
-The Tikhonov method proposes to modify this problem by adding a regularization term. The regularized version of the problem looks as follows:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Tikhonov method proposes to modify this problem by adding a regularization term. The regularized version of the problem looks as follows:
 
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/tihonov.png" alt="tihonov"
@@ -295,7 +295,7 @@ Where:
 - λ is the regularization parameter that controls the balance between the accuracy of fitting the data and the magnitude of the solution
 
 #### Solution of the Problem
-The solution to this problem can be obtained by finding the vector that minimizes the functional:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The solution to this problem can be obtained by finding the vector that minimizes the functional:
 
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/tihonov2.png" alt="tihonov2"
@@ -368,11 +368,10 @@ for row in b_tikh:
 ```
 ### Advantages and Disadvantages of the Tikhonov Regularization Method
 
-The Tikhonov regularization method, also known as Ridge regression in the context of machine learning, is a widely used technique for solving ill-posed problems and stabilizing inverse problems. Here are the key advantages and disadvantages of this method:
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Tikhonov regularization method, also known as Ridge regression in the context of machine learning, is a widely used technique for solving ill-posed problems and stabilizing inverse problems. Here are the key advantages and disadvantages of this method:
 
 #### Advantages
-- <b>Stabilization of Solutions</b>: 1. Overcoming Sensitivity: Tikhonov regularization helps address issues with poorly conditioned matrices, where small changes in input data can lead to large variations in the solution. This improves the stability of the solution.
-2. Robustness to Noise: By introducing a regularization term, the method becomes more resilient to noise in the data, enhancing the overall reliability of the solution.
+- <b>Stabilization of Solutions</b>: 1. Overcoming Sensitivity: Tikhonov regularization helps address issues with poorly conditioned matrices, where small changes in input data can lead to large variations in the solution. This improves the stability of the solution. 2. Robustness to Noise: By introducing a regularization term, the method becomes more resilient to noise in the data, enhancing the overall reliability of the solution.
 
 - <b>Control Overfitting</b>: Prevents Overfitting. In machine learning and statistical applications, regularization helps prevent overfitting to training data, improving the model's generalization ability on new, unseen data.
 
