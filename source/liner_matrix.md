@@ -261,4 +261,52 @@ print('Deviation =', p)
 - Preliminary checking of convergence conditions may be required.
 - Not as well-suited for parallel implementation as the Jacobi method.
 
+## Tikhonov regularization method
+
+The Tikhonov regularization method, also known as Ridge regression in the context of machine learning, is used to solve ill-posed problems and stabilize inverse problems, particularly when solving systems of linear equations with poorly conditioned or singular matrices.
+
+### Key Concepts
+
+#### Ill-posed Problems
+Ill-posed problems are characterized by the fact that small changes in the input data can lead to large changes in the solution. Examples include problems with poorly conditioned matrices or issues with noise in the data.
+
+#### Regularization
+Regularization introduces additional information or constraints to stabilize the solution. In the case of the Tikhonov method, an additional term is added to the solution to control the magnitude of the solution.
+
+#### Method Formulation
+Consider the problem of solving a system of linear equations:
+<p align="center">
+   𝐴𝑥 = 𝑏
+</p>
+
+Where:
+- 𝐴 is the coefficient matrix (of size 𝑚 × 𝑛)
+- 𝑥 is the vector of unknowns (of size 𝑛)
+- 𝑏 is the observation vector (of size 𝑚)
+
+The Tikhonov method proposes to modify this problem by adding a regularization term. The regularized version of the problem looks as follows:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/tihonov.png" alt="tihonov"
+</p>
+
+Where:
+
+- ∥ ⋅ ∥2 is the Euclidean norm
+- λ is the regularization parameter that controls the balance between the accuracy of fitting the data and the magnitude of the solution
+
+#### Solution of the Problem
+The solution to this problem can be obtained by finding the vector that minimizes the functional:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/tihonov2.png" alt="tihonov2"
+</p>​
+ 
+For this, an analytical solution can be used, which reduces to solving the following system:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/tihonov3.png" alt="tihonov3"
+</p>
+
+Where 𝐼 is the identity matrix.
 
