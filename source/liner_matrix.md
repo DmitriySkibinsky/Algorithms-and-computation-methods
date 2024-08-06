@@ -491,7 +491,8 @@ def fletcher_reeves_method(A, B):
 A = np.array([[4, 1], [1, 3]])
 B = np.array([1, 2])
 solution = fletcher_reeves_method(A, B)
-print("Solution:", solution)```
+print("Solution:", solution)
+```
 
 ### Advantages of the Fletcher-Reeves Method
 - <b>Efficiency</b>: The method requires storing only a few vectors, making it suitable for solving large problems.
