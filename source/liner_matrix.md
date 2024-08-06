@@ -264,6 +264,7 @@ print('Deviation =', p)
 ## Tikhonov regularization method
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The Tikhonov regularization method, also known as Ridge regression in the context of machine learning, is a powerful technique employed to address ill-posed problems and stabilize inverse problems. These issues often arise when solving systems of linear equations that involve poorly conditioned or singular matrices. In such cases, small perturbations in the input data can lead to significant deviations in the output, making the problem highly sensitive to noise and other inaccuracies. By incorporating an additional regularization term into the solution process, the Tikhonov method mitigates these instabilities, ensuring a more robust and reliable solution. This technique is widely utilized in various fields, including statistics, engineering, and computer science, to improve the performance and accuracy of predictive models and to handle data with high levels of multicollinearity.
+
 ### Key Concepts
 
 #### Ill-posed Problems
