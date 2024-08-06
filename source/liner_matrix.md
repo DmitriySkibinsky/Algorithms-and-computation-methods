@@ -391,9 +391,13 @@ for row in b_tikh:
 
 ## Fletcher-Reeves Conjugate Gradient Method
 
-he Fletcher-Reeves Conjugate Gradient Method is a numerical method for solving systems of linear equations where the matrix of the system is symmetric and positive definite. This method is also used for minimizing quadratic functions. It combines ideas from gradient descent and the method of steepest descent, allowing efficient solutions for large systems of linear equations and optimization problems.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Fletcher-Reeves Conjugate Gradient Method is a numerical method for solving systems of linear equations where the matrix of the system is symmetric and positive definite. This method is also used for minimizing quadratic functions. It combines ideas from gradient descent and the method of steepest descent, allowing efficient solutions for large systems of linear equations and optimization problems.
 
-The main idea of the method is to construct a sequence of directions that are conjugate (or orthogonal) with respect to the matrix 𝐴, where 𝐴 is a symmetric positive definite matrix. This sequence of directions enables faster convergence to the solution compared to the ordinary gradient descent.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The main idea of the method is to construct a sequence of directions that are conjugate (or orthogonal) with respect to the matrix 𝐴, where 𝐴 is a symmetric positive definite matrix. This sequence of directions enables faster convergence to the solution compared to the ordinary gradient descent.
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/rivz6.png" alt="rivz6"
+</p>​  
 
 ### Fletcher-Reeves Algorithm
 1. Initialization:
@@ -405,15 +409,35 @@ The main idea of the method is to construct a sequence of directions that are co
 2. Iteration Process:
 For 𝑘 = 0, 1, 2, … :
 - Compute the step size 𝛼𝑘:
-  
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/rivz1.png" alt="rivz1"
+</p>​  
+
 - Update the approximation of the solution:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/rivz2.png" alt="rivz2"
+</p>​  
 
 - Update the gradient:
 
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/rivz3.png" alt="rivz3"
+</p>​  
+  
 - Compute the 𝛽 coefficient:
 
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/rivz4.png" alt="rivz4"
+</p>​  
+  
 - Update the descent direction:
 
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/rivz5.png" alt="rivz5"
+</p>​  
+  
 - Check the stopping criterion. If the gradient is sufficiently small, the iterations stop.
 
 ### Advantages of the Fletcher-Reeves Method
