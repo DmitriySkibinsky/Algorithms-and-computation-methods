@@ -509,4 +509,4 @@ The Fletcher-Reeves method is widely used in numerical solutions of problems rel
 - <b>Loss of Conjugacy</b>: Due to numerical errors, the directions may lose their conjugacy, requiring a restart or reinitialization of the method.
 
 ### Applications
-The Fletcher-Reeves method is widely used in numerical solutions of problems related to linear algebra and optimization. It finds applications in machine learning, image processing, financial modeling, and other fields where the solution of large systems of linear equations or minimization of quadratic functions is required.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The Fletcher-Reeves method is widely used in numerical solutions of problems related to linear algebra and optimization. It finds applications in machine learning, image processing, financial modeling, and other fields where the solution of large systems of linear equations or minimization of quadratic functions is required.
