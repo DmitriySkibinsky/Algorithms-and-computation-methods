@@ -389,6 +389,46 @@ for row in b_tikh:
 
 - <b>Not Always Optimal for All Data Types</b>: Smoothing Assumptions. Tikhonov regularization assumes smoothness of solutions, which may not be appropriate for all types of data, particularly if the data have a different nature.
 
+## Fletcher-Reeves Conjugate Gradient Method
 
+he Fletcher-Reeves Conjugate Gradient Method is a numerical method for solving systems of linear equations where the matrix of the system is symmetric and positive definite. This method is also used for minimizing quadratic functions. It combines ideas from gradient descent and the method of steepest descent, allowing efficient solutions for large systems of linear equations and optimization problems.
 
+The main idea of the method is to construct a sequence of directions that are conjugate (or orthogonal) with respect to the matrix 𝐴, where 𝐴 is a symmetric positive definite matrix. This sequence of directions enables faster convergence to the solution compared to the ordinary gradient descent.
 
+### Fletcher-Reeves Algorithm
+1. Initialization:
+
+- Set the initial point 𝑥0
+- Compute the initial gradient 𝑔0 = ∇𝑓(𝑥0) = 𝐴𝑥0 − 𝑏g 
+- The initial descent direction is 𝑑0 = −𝑔0
+
+2. Iteration Process:
+For 𝑘 = 0, 1, 2, … :
+- Compute the step size 𝛼𝑘:
+  
+- Update the approximation of the solution:
+
+- Update the gradient:
+
+- Compute the 𝛽 coefficient:
+
+- Update the descent direction:
+
+- Check the stopping criterion. If the gradient is sufficiently small, the iterations stop.
+
+### Advantages of the Fletcher-Reeves Method
+- <b>Efficiency</b>: The method requires storing only a few vectors, making it suitable for solving large problems.
+- <b>Fast Convergence</b>: Ideally, for a quadratic function, the method converges in 𝑛 iterations (where 𝑛 is the dimension of the problem).
+- <b>No Parameter Selection Needed</b>: Unlike some other methods, the conjugate gradient method does not require the selection of parameters such as the learning rate.
+Applications
+The Fletcher-Reeves method is widely used in numerical solutions of problems related to linear algebra and optimization. It finds applications in machine learning, image processing, financial modeling, and other fields where the solution of large systems of linear equations or minimization of quadratic functions is required.
+
+### Downsides of the Fletcher-Reeves Method
+
+- <b>Requirement for Symmetric Positive Definite Matrix</b>: The method only works for systems where the matrix 𝐴 is symmetric and positive definite. It may not perform well or converge if these conditions are not met.
+- <b>Sensitivity to Numerical Errors</b>: The method can accumulate numerical errors over many iterations, particularly with ill-conditioned matrices, leading to poor convergence or divergence.
+- <b>Dependence on Initial Point</b>: The convergence rate can be highly dependent on the choice of the initial point. A poor initial guess may result in more iterations.
+- <b>Loss of Conjugacy</b>: Due to numerical errors, the directions may lose their conjugacy, requiring a restart or reinitialization of the method.
+
+### Applications
+The Fletcher-Reeves method is widely used in numerical solutions of problems related to linear algebra and optimization. It finds applications in machine learning, image processing, financial modeling, and other fields where the solution of large systems of linear equations or minimization of quadratic functions is required.
