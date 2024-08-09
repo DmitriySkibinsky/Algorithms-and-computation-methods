@@ -11,3 +11,114 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The Newton-Raphson Method is a specific application of Newton's Method, particularly useful for solving equations with multiple variables. By extending the principles of Newton's Method to systems of nonlinear equations, the Newton-Raphson Method offers a powerful tool for finding solutions in more complex scenarios. This method is widely used in engineering and scientific computations, where systems of nonlinear equations frequently occur.
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;In this discussion, we will delve into each of these methods, examining their theoretical foundations, practical implementation, and the scenarios where they excel. By understanding the strengths and limitations of the Bisection Method, Newton's Method, and the Newton-Raphson Method, we can make informed choices about which technique to apply to specific types of nonlinear equations, ultimately improving the efficiency and accuracy of our solutions.
+
+## The dichotomy methods
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The bisection method, also known as the method of dichotomy or the interval halving method, is one of the simplest and most reliable numerical techniques for solving nonlinear equations. This method is used to find the root of a continuous function 𝑓(𝑥), meaning the value of 𝑥 for which 𝑓(𝑥) = 0.
+
+### Key Principles of the Method
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The bisection method is based on the following fundamental principle: if a function 𝑓(𝑥) is continuous on the interval [𝑎,𝑏] and 𝑓(𝑎) and 𝑓(𝑏) have opposite signs, then there is at least one root within this interval, meaning a value 𝑥 for which 𝑓(𝑥) = 0. This fact follows from the Bolzano-Cauchy theorem.
+
+### Steps of the Method
+The bisection method is implemented in several steps:
+
+1. Selecting the Initial Interval: Choose an initial interval [𝑎,𝑏], where 𝑓(𝑎) and 𝑓(𝑏) have opposite signs ( e.g.,  𝑓(𝑎) < 0 and 𝑓(𝑏) > 0 ).
+
+2. Finding the Midpoint of the Interval: Calculate the midpoint of the interval 𝑐 = (𝑎 + 𝑏) / 2.
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/main.png" alt="main"
+</p>
+
+3. Checking the Sign of the Function at 𝑐:
+- If 𝑓(𝑐) = 0, then 𝑐 is the root of the equation, and the process can be terminated.
+- If 𝑓(𝑐) ≠ 0, determine on which subinterval [𝑎,𝑐] or [𝑐,𝑏] the function changes sign, and choose this interval as the new interval for the next iteration.
+
+4. Narrowing the Interval: Depending on the sign of 𝑓(𝑐), the interval is halved, and the process is repeated until the interval length becomes sufficiently small or the function value at the midpoint is close enough to zero with the desired accuracy.
+
+```python
+import math
+
+def remove_similar_roots(roots):
+    new_roots = []
+    plus_roots = []
+    minus_roots = []
+    for i, root in enumerate(roots):
+        if abs(root) > 0.001:
+            new_roots.append(root)
+
+    for i, root in enumerate(new_roots):
+        if root > 1:
+            plus_roots.append(root)
+        else:
+            minus_roots.append(root)
+
+    plus_roots = plus_roots[1::2]
+    minus_roots = minus_roots[::2]
+
+    # Combine the two arrays
+    all_roots = minus_roots + plus_roots
+
+    return all_roots
+
+
+def f(x):
+    # Check that x is not zero or a multiple of π to avoid division by zero
+    if x == 0 or math.isclose(x % math.pi, 0, abs_tol=1e-9):
+        return float('inf')  # At x = 0 or multiple of π, the function is undefined, return infinity
+    else:
+        # Check that sin(x) is not zero to avoid division by zero
+        if math.isclose(math.sin(x), 0, abs_tol=1e-9):
+            return float('inf')  # At sin(x) = 0, the function is undefined, return infinity
+        else:
+            return x - (math.cos(x) / math.sin(x))
+
+
+a, b = map(float, input("Enter the interval values: ").split())
+eps = 0.001
+h = 0.1
+pCounter = int((b - a) / h)  # Number of points between a and b
+
+points = [[a + i * h, a + (i + 1) * h] for i in range(pCounter)]
+
+answ = []
+
+for i in range(pCounter):
+    a, b = points[i]
+    if f(a) * f(b) > 0:
+        continue  # If the function does not change sign on the interval, skip this interval
+
+    while (b - a) > eps:
+        c = (a + b) / 2
+        if math.isclose(f(c), 0, abs_tol=eps):
+            answ.append(c)
+            break
+        elif f(a) * f(c) < 0:
+            b = c
+        else:
+            a = c
+
+    # Add the found root to the list with the given precision
+    answ.append((a + b) / 2)
+
+unique_roots = remove_similar_roots(answ)
+print("Equation roots: ", end="")
+for root in unique_roots:
+    print(root, end=" ")
+```
+
+### Advantages and Disadvantages of the Method
+
+#### Advantages:
+
+- <b>Guaranteed Convergence</b>: The bisection method always converges, provided the initial interval is chosen correctly (i.e., it contains a root).
+- <b>Simplicity of Implementation</b>: The method is easy to program and requires minimal computation at each step.
+
+#### Disadvantages:
+
+- <b>Slow Convergence</b>: In the worst case, the convergence rate is linear, meaning that a large number of iterations may be required to achieve high accuracy.
+- <b>Inefficiency for Multiple Roots</b>: The method may perform slowly if the equation's root is a multiple root.
+
+### Applications
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The bisection method is particularly useful when a root of a function needs to be found within a specific interval and a good initial estimate is not available for other, more complex methods. It is often used as the first step in more advanced algorithms to provide a rough approximation that can then be refined by other methods.
