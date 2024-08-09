@@ -28,7 +28,7 @@ The bisection method is implemented in several steps:
 2. Finding the Midpoint of the Interval: Calculate the midpoint of the interval 𝑐 = (𝑎 + 𝑏) / 2.
 
 <p align="center">
-  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/2.%20Solution%20of%20linear%20equations/img/main.png" alt="main"
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/dictotomii.png" alt="dictotomii"
 </p>
 
 3. Checking the Sign of the Function at 𝑐:
