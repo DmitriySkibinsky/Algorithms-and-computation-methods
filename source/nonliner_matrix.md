@@ -149,15 +149,6 @@ where:
 - <b>Calculating the new approximation 𝑥<sub>𝑛+1</sub></b>: The Newton's method formula is used.
 - <b>Checking the stopping criterion</b>: If ∣ 𝑥<sub>𝑛+1 − 𝑥<sub>𝑛</sub> ∣ is sufficiently small, the iteration process stops, as the desired accuracy has been reached.
 
-### Advantages of Newton's Method
-- <b>Fast convergence</b>: Newton's method typically converges very quickly, especially if the initial guess 𝑥<sub>0</sub> is close to the root.
-- <b>Wide applicability</b>: The method is suitable for solving various types of equations and systems of nonlinear equations.
-
-### Disadvantages of Newton's Method
-- <b>Dependence on the initial guess</b>: If the initial guess is poorly chosen, the method may not converge or may converge to the wrong root.
-- <b>Requirement of the derivative</b>: The method requires the computation of the derivative of the function, which is not always simple or possible.
-- <b>Problems with zero derivative</b>: If the derivative of the function at the point 𝑥<sub>𝑛</sub> is zero, the method cannot be applied.
-
 ### Example
 
 Let's consider an example of finding the root of the equation 𝑓(𝑥) = $𝑥^{2}$ − 2 = 0 using Newton's method.
@@ -174,3 +165,84 @@ and so on.
 The process continues until the desired accuracy is achieved. As a result, we obtain 𝑥 ≈ 1.4142, which is a good approximation to the root $\sqrt{2}$.
 
 Thus, Newton's method is a powerful and efficient tool for solving nonlinear equations.
+
+```python
+import math
+
+def remove_similar_roots(roots):
+    new_roots = []
+    plus_roots = []
+    minus_roots = []
+    for i, root in enumerate(roots):
+        if abs(root) > 0.001:
+            new_roots.append(root)
+
+    for i, root in enumerate(new_roots):
+        if root > 0:
+            plus_roots.append(root)
+        else:
+            minus_roots.append(root)
+
+    plus_roots = plus_roots[::2]
+    minus_roots = minus_roots[::2]
+
+    # Combine the two arrays
+    all_roots = minus_roots + plus_roots
+
+    return all_roots
+
+def f(x):
+    if math.isclose(math.sin(x), 0, abs_tol=1e-9):
+        return float('nan')  # Return NaN for the cases where sin(x) is close to zero
+    else:
+        return x - (math.cos(x) / math.sin(x))
+
+
+def df(x):
+    if math.isclose(math.sin(x), 0, abs_tol=1e-9):
+        return float('nan')  # Return NaN for the cases where sin(x) is close to zero
+    else:
+        return 1 + (1 / (math.sin(x)) ** 2)
+
+
+def find_roots(a, b, eps):
+    roots = []
+    step = 0.001  # Increased step for checking the sign of the function
+    x = a
+
+    while x < b:
+        # Check if the function changes sign within the step
+        if x + step <= b and f(x) * f(x + step) < 0:
+            # The sign of the function changes in this interval, attempt to find a root
+            x0 = x + step / 2  # Initial approximation for Newton's method
+            delta = eps + 1
+            while abs(delta) >= eps:
+                x1 = x0 - f(x0) / df(x0)
+                delta = x1 - x0
+                x0 = x1
+            # Check if the root is not too close to any existing root
+            if not any(math.isclose(root, x1, abs_tol=eps) for root in roots):
+                roots.append(x1)
+        x += step
+    return roots
+
+
+a = float(input("Enter the coordinate A of the interval: "))
+b = float(input("Enter the coordinate B of the interval: "))
+eps = float(input("Enter the precision value: "))
+
+roots = find_roots(a, b, eps)
+unique_roots = remove_similar_roots(roots)
+print("Found roots:", unique_roots)
+```
+
+### Advantages of Newton's Method
+- <b>Fast convergence</b>: Newton's method typically converges very quickly, especially if the initial guess 𝑥<sub>0</sub> is close to the root.
+- <b>Wide applicability</b>: The method is suitable for solving various types of equations and systems of nonlinear equations.
+
+### Disadvantages of Newton's Method
+- <b>Dependence on the initial guess</b>: If the initial guess is poorly chosen, the method may not converge or may converge to the wrong root.
+- <b>Requirement of the derivative</b>: The method requires the computation of the derivative of the function, which is not always simple or possible.
+- <b>Problems with zero derivative</b>: If the derivative of the function at the point 𝑥<sub>𝑛</sub> is zero, the method cannot be applied.
+
+
