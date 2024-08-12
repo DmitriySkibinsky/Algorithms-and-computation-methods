@@ -122,3 +122,54 @@ for root in unique_roots:
 
 ### Applications
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The bisection method is particularly useful when a root of a function needs to be found within a specific interval and a good initial estimate is not available for other, more complex methods. It is often used as the first step in more advanced algorithms to provide a rough approximation that can then be refined by other methods.
+
+## Newton's method
+
+The Newton's method, also known as the method of tangents, is a numerical technique for finding the roots of nonlinear equations of the form 𝑓(𝑥) = 0. This method was proposed by Isaac Newton and is an iterative procedure that allows for finding approximate values of the roots of equations with high speed.
+
+### The Idea Behind the Method
+
+The method is based on using the derivative of the function 𝑓(𝑥). Suppose we have some initial approximation 𝑥0 for the root of the equation. We can improve this approximation by using a linear approximation of the function 𝑓(𝑥) at the point 𝑥0. In other words, we approximate the function with a tangent line at the point 𝑥0 and find its intersection with the x-axis.
+
+### Newton's Method Formula
+
+The formula for the iterative process is as follows:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/Newton.png" alt="Newton"
+</p>
+
+where:
+
+- x<sub>n</sub> is the current approximation;
+- 𝑥
+𝑛
++
+1
+x 
+n+1
+​
+  is the next approximation;
+𝑓
+′
+(
+𝑥
+𝑛
+)
+f 
+′
+ (x 
+n
+​
+ ) is the derivative of the function 
+𝑓
+(
+𝑥
+)
+f(x) at the point 
+𝑥
+𝑛
+x 
+n
+​
+ .
