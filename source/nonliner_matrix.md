@@ -140,36 +140,37 @@ The formula for the iterative process is as follows:
 </p>
 
 where:
+- x<sub>𝑛</sub> is the current approximation;
+- 𝑥<sub>𝑛+1</sub> is the next approximation;
+- 𝑓′(𝑥<sub>𝑛) is the derivative of the function 𝑓(𝑥) at the point 𝑥<sub>𝑛</sub>.
 
-- x<sub>n</sub> is the current approximation;
-- 𝑥
-𝑛
-+
-1
-x 
-n+1
-​
-  is the next approximation;
-𝑓
-′
-(
-𝑥
-𝑛
-)
-f 
-′
- (x 
-n
-​
- ) is the derivative of the function 
-𝑓
-(
-𝑥
-)
-f(x) at the point 
-𝑥
-𝑛
-x 
-n
-​
- .
+### Steps of the Method
+- <b>Choosing the initial approximation 𝑥<sub>0</sub></b>: This is the starting point from which the iteration process begins.
+- <b>Calculating the new approximation 𝑥<sub>𝑛+1</sub></b>: The Newton's method formula is used.
+- <b>Checking the stopping criterion</b>: If ∣ 𝑥<sub>𝑛+1 − 𝑥<sub>𝑛</sub> ∣ is sufficiently small, the iteration process stops, as the desired accuracy has been reached.
+
+### Advantages of Newton's Method
+- <b>Fast convergence</b>: Newton's method typically converges very quickly, especially if the initial guess 𝑥<sub>0</sub> is close to the root.
+- <b>Wide applicability</b>: The method is suitable for solving various types of equations and systems of nonlinear equations.
+
+### Disadvantages of Newton's Method
+- <b>Dependence on the initial guess</b>: If the initial guess is poorly chosen, the method may not converge or may converge to the wrong root.
+- <b>Requirement of the derivative</b>: The method requires the computation of the derivative of the function, which is not always simple or possible.
+- <b>Problems with zero derivative</b>: If the derivative of the function at the point 𝑥<sub>𝑛</sub> is zero, the method cannot be applied.
+
+### Example
+
+Let's consider an example of finding the root of the equation 𝑓(𝑥) = $𝑥^{2}$ − 2 = 0 using Newton's method.
+
+1. Let the initial approximation be 𝑥<sub>0</sub> = 1.
+2. The function is 𝑓(𝑥) = $𝑥^{2}$ − 2, and its derivative is 𝑓′(𝑥) = 2𝑥
+3. Apply Newton's method:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/Newton_ex.png" alt="Newton_ex"
+</p>
+and so on.
+
+The process continues until the desired accuracy is achieved. As a result, we obtain 𝑥 ≈ 1.4142, which is a good approximation to the root $\sqrt{2}$.
+
+Thus, Newton's method is a powerful and efficient tool for solving nonlinear equations.
