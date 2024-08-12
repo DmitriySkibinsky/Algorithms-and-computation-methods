@@ -83,7 +83,7 @@ if __name__ == "__main__":
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Statistical Interpretation: The results from Monte Carlo integration come with a natural statistical interpretation, providing a clear measure of the uncertainty and error associated with the estimate.
 
 ### Disadvantages
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Convergence Rate: The convergence rate of Monte Carlo integration is relatively slow compared to some deterministic methods. The error decreases as 1/"$\sqrt{N}$", where 𝑁 is the number of samples, which means that to reduce the error by a factor of 10, the number of samples must be increased by a factor of 100.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Convergence Rate: The convergence rate of Monte Carlo integration is relatively slow compared to some deterministic methods. The error decreases as 1/√𝑁, where 𝑁 is the number of samples, which means that to reduce the error by a factor of 10, the number of samples must be increased by a factor of 100.
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Computational Cost: Because of the slow convergence rate, achieving high precision requires a large number of samples, which can be computationally expensive. This is particularly relevant when the function evaluations are costly.
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Randomness Quality: The quality of the random number generator can affect the accuracy and reliability of the results. Poor-quality random number generators can introduce biases and reduce the effectiveness of the method.
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Complexity in High Precision: While Monte Carlo methods are efficient in higher dimensions, obtaining very high precision can still be challenging and resource-intensive, as the number of samples required for a given precision increases exponentially.
