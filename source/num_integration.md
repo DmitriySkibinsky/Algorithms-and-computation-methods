@@ -100,9 +100,9 @@ The formula for Simpson's rule for an interval [𝑎,𝑏] divided into 𝑛 sub
 </p>
 
 Where:
-𝑥0 = 𝑎
-𝑥𝑛 = 𝑏
-𝑥𝑖 = 𝑎 + 𝑖 ⋅ ℎ for 𝑖 = 1, 2, …, 𝑛
+𝑥<sub>0</sub> = 𝑎
+𝑥<sub>𝑛</sub> = 𝑏
+𝑥<sub>𝑖</sub> = 𝑎 + 𝑖 ⋅ ℎ for 𝑖 = 1, 2, …, 𝑛
 As a result, we get a situation where the multipliers will alternate 1, 4, 2, 4, 2, ..., 4, 1
 
 <p align="center">
