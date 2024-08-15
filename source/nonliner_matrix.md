@@ -245,4 +245,28 @@ print("Found roots:", unique_roots)
 - <b>Requirement of the derivative</b>: The method requires the computation of the derivative of the function, which is not always simple or possible.
 - <b>Problems with zero derivative</b>: If the derivative of the function at the point 𝑥<sub>𝑛</sub> is zero, the method cannot be applied.
 
+## Newton-Raphson method
 
+The Newton-Raphson method is one of the most popular and efficient numerical methods for finding the roots of both single nonlinear equations and systems of nonlinear equations. This method is based on the idea of linear approximation of a function or a system of equations near the presumed root.
+
+### Main Idea of the Newton-Raphson Method
+
+The Newton-Raphson method for a single variable works as follows:
+
+1. Start with an initial guess of the root 𝑥0.
+
+2. Calculate the next approximation using the derivative of the function:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/Newton.png" alt="Newton"
+</p>
+
+3. Continue iterating until the function value 𝑓(𝑥) at the current approximation becomes sufficiently close to zero.
+
+### Newton-Raphson Method for Systems of Equations
+
+For systems of nonlinear equations, the idea is similar, but it requires dealing with multiple variables and equations. Suppose we have a system of two equations:
+\[
+  f1(x,y)=0
+  f2(x,y)=0
+\]
