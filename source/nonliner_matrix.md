@@ -289,6 +289,7 @@ In each step, solve the linear system to find the increments Δ𝑥 and Δ𝑦:
 <p align="center">
   <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/rafs2.png" alt="rafs2"
 </p>
+  
 This is equivalent to finding the inverse of the Jacobian matrix and multiplying it by the function vector.
 
 4. <b>Updating the Approximations</b>:
@@ -378,8 +379,8 @@ except ValueError as e:
 ### Disadvantages of the Method
 
 - <b>Dependence on the Initial Guess</b>: If the initial guess is far from the true root, the method may not converge or may converge to an incorrect root.
-- <b>Singularity Issues<.b>: If the Jacobian matrix becomes singular (its determinant is zero), the method cannot proceed.
-- <b>Requires Derivative Calculation<.b>: The method requires computing and analyzing derivatives, which can be challenging for complex functions.
+- <b>Singularity Issues</b>: If the Jacobian matrix becomes singular (its determinant is zero), the method cannot proceed.
+- <b>Requires Derivative Calculation</b>: The method requires computing and analyzing derivatives, which can be challenging for complex functions.
 
 ### Applications of the Method
 The Newton-Raphson method is used in various fields, including engineering calculations, physics, optimization, and solving different nonlinear equations and systems. It is a powerful tool in numerical analysis and is often employed when a fast and efficient solution to nonlinear problems is required.
