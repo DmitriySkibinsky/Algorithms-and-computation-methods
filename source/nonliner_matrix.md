@@ -266,7 +266,120 @@ The Newton-Raphson method for a single variable works as follows:
 ### Newton-Raphson Method for Systems of Equations
 
 For systems of nonlinear equations, the idea is similar, but it requires dealing with multiple variables and equations. Suppose we have a system of two equations:
-\[
+
+<p style="text-align:center;">
   f1(x,y)=0
   f2(x,y)=0
-\]
+</p>
+
+### Steps of the Method for Systems of Equations:
+1. <b>Initial Guess</b>:
+Start with initial guesses for the variables, for example, 𝑥0 and 𝑦0.
+
+2. <b>Function and Jacobian Calculation</b>:
+Compute the values of the system's functions at the current point, as well as the Jacobian matrix — the matrix of partial derivatives of the system's functions with respect to the variables:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/rafs1.png" alt="rafs1"
+</p>
+
+3. <b>Solving the Linear System</b>:
+In each step, solve the linear system to find the increments Δ𝑥 and Δ𝑦:
+
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/rafs2.png" alt="rafs2"
+</p>
+This is equivalent to finding the inverse of the Jacobian matrix and multiplying it by the function vector.
+
+4. <b>Updating the Approximations</b>:
+Update the variable approximations:
+
+x<sub>n+1</sub> = x<sub>n</sub>+Δx
+y<sub>n+1</sub> = y<sub>n</sub>+Δy
+
+5. <b>Checking the Stopping Condition</b>:
+Check how small the function values have become at the new points 𝑥<sub>𝑛+1</sub> and 𝑦<sub>𝑛+1</sub>. If the function value is less than the specified tolerance (e.g., 𝜖), the algorithm stops.
+
+6. <b>Repeat Steps</b>:
+If the tolerance is not met, the algorithm continues iterating.
+
+#### For example
+<p align="center">
+  <img src="https://github.com/DmitriySkibinsky/Algorithms-and-computation-methods/blob/main/source/3.%20Solution%20of%20nonlinear%20equations/img/rafs3.png" alt="rafs3"
+</p>
+  
+```python
+import math
+
+# System of equations
+def f1(x, y):
+    return math.sin(y + 1) - x - 1.2
+
+def f2(x, y):
+    return 2*y + math.cos(x) - 2
+
+# Partial derivatives of the system functions
+def difx1dx(x, y):
+    return -1
+
+def dify1dy(x, y):
+    return math.cos(y+1)
+
+def difx2dx(x, y):
+    return math.sin(x)*(-1)
+
+def dify2dy(x, y):
+    return 2
+
+# Vector function F(x, y)
+def Fun(x, y):
+    return [f1(x, y), f2(x, y)]
+
+# Jacobian matrix
+def Jacobian(x, y):
+    return [[difx1dx(x, y), dify1dy(x, y)],
+            [difx2dx(x, y), dify2dy(x, y)]]
+
+# Newton-Raphson method for the system of equations
+def newtonRaphson(x0, y0, eps):
+    x, y = x0, y0
+    Fx = Fun(x, y)
+    i = 0
+    while abs(Fx[0]) > eps or abs(Fx[1]) > eps:
+        J = Jacobian(x, y)
+        detJ = J[0][0]*J[1][1] - J[0][1]*J[1][0]
+        if abs(detJ) < eps:
+            raise ValueError("The Jacobian matrix is singular, no solutions exist.")
+        dx = (J[1][1]*Fx[0] - J[0][1]*Fx[1]) / detJ
+        dy = (J[0][0]*Fx[1] - J[1][0]*Fx[0]) / detJ
+        x -= dx
+        y -= dy
+        Fx = Fun(x, y)
+        i += 1
+    return [x, y, i]
+
+
+x0 = float(input("Enter initial approximation x0: "))
+y0 = float(input("Enter initial approximation y0: "))
+eps = float(input("Enter accuracy eps: "))
+
+try:
+    roots = newtonRaphson(x0, y0, eps)
+    print("Found roots of the system of equations: x = {}, y = {}, Number of iterations = {}".format(roots[0], roots[1], roots[2]))
+except ValueError as e:
+    print("Error:", e)
+```
+
+### Advantages of the Newton-Raphson Method
+
+- <b>Fast Convergence</b>: If the initial guess is close enough to the true root, the method converges very quickly — usually with quadratic convergence.
+- <b>Ease of Use</b>: The method is widely used and easy to implement for many problems.
+
+### Disadvantages of the Method
+
+- <b>Dependence on the Initial Guess</b>: If the initial guess is far from the true root, the method may not converge or may converge to an incorrect root.
+- <b>Singularity Issues<.b>: If the Jacobian matrix becomes singular (its determinant is zero), the method cannot proceed.
+- <b>Requires Derivative Calculation<.b>: The method requires computing and analyzing derivatives, which can be challenging for complex functions.
+
+### Applications of the Method
+The Newton-Raphson method is used in various fields, including engineering calculations, physics, optimization, and solving different nonlinear equations and systems. It is a powerful tool in numerical analysis and is often employed when a fast and efficient solution to nonlinear problems is required.
